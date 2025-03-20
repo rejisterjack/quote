@@ -48,4 +48,23 @@ copyQuoteButton.addEventListener("click", () => {
   })
 })
 
+exportQuoteButton.addEventListener("click", () => {
+  const buttons = document.querySelectorAll(".btn")
+  buttons.forEach((button) => (button.style.display = "none"))
+
+  html2canvas(quoteBox, {
+    scale: 2,
+    logging: true,
+    useCORS: true,
+    backgroundColor: "#121212",
+  }).then((canvas) => {
+    buttons.forEach((button) => (button.style.display = "inline-block"))
+
+    const link = document.createElement("a")
+    link.download = "quote.png"
+    link.href = canvas.toDataURL("image/png", 1.0)
+    link.click()
+  })
+})
+
 newQuoteButton.addEventListener("click", fetchQuote)
