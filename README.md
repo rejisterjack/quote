@@ -8,6 +8,7 @@ A simple web application that fetches and displays random quotes. Users can copy
 - Copy quotes to the clipboard.
 - Share quotes on Twitter.
 - Export quotes as images.
+- Responsive design for mobile and desktop.
 
 ## Technologies Used
 
@@ -16,6 +17,26 @@ A simple web application that fetches and displays random quotes. Users can copy
 - **Bootstrap** for responsive design.
 - **html2canvas** for exporting quotes as images.
 - **Vite** for development and build tooling.
+
+## Application Features
+
+- **New Quote**: Fetch a random quote with a single click.
+- **Copy to Clipboard**: Easily copy quotes for sharing or saving.
+- **Tweet Integration**: Share quotes directly on Twitter.
+- **Export as Image**: Save quotes as images for offline use.
+
+## Screenshots
+
+![Screenshot 1](./screenshots/1.png)
+![Screenshot 2](./screenshots/2.png)
+![ScreenShot 3](./screenshots/3.png)
+![ScreenShot 4](./screenshots/4.png)
+![ScreenShot 5](./screenshots/5.png)
+
+## Deployment
+
+- **Hosted URL**: [https://quote-ashy-pi.vercel.app/](https://quote-ashy-pi.vercel.app/)
+- **GitHub Repository**: [https://github.com/rejisterjack/quote.git](https://github.com/rejisterjack/quote.git)
 
 ## Setup
 
