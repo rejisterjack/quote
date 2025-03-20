@@ -20,14 +20,26 @@ async function fetchQuote() {
       const author = data.data.author
       quoteElement.textContent = `"${quote}"`
       authorElement.textContent = `- ${author}`
+      updateTweetLink(quote, author)
     } else {
       quoteElement.textContent = "Failed to fetch quote"
       authorElement.textContent = "Please try again later"
+      copyQuoteButton.disabled = true
+      exportQuoteButton.disabled = true
+      tweetQuoteButton.disabled = true
+      tweetQuoteButton.classList.add("disabled")
+      exportQuoteButton.classList.add("disabled")
+      copyQuoteButton.classList.add("disabled")
       return
     }
   } catch (error) {
     console.error("Failed to fetch quote", error)
   }
+}
+
+function updateTweetLink(quote, author) {
+  const tweetText = encodeURIComponent(`"${quote}" - ${author}`)
+  tweetQuoteButton.href = `https://twitter.com/intent/tweet?text=${tweetText}`
 }
 
 newQuoteButton.addEventListener("click", fetchQuote)
