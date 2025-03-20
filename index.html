@@ -9,7 +9,31 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body
+    class="bg-dark text-white d-flex justify-content-center align-items-center vh-100"
+  >
+    <div class="container">
+      <div id="quote-box" class="bg-black p-5 rounded shadow">
+        <h1 id="quote" class="display-5 mb-4">
+          Click the button to get a quote!
+        </h1>
+        <p id="author" class="lead text-end fst-italic"></p>
+        <div class="mt-4 d-flex justify-content-center align-items-center">
+          <button id="new-quote" class="btn btn-primary me-2">New Quote</button>
+          <button id="copy-quote" class="btn btn-secondary me-2">
+            Copy Quote
+          </button>
+          <a id="tweet-quote" class="btn btn-info me-2" target="_blank"
+            >Tweet Quote</a
+          >
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+          <button id="export-quote" class="btn btn-success">
+            Export as Image
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
