@@ -21,7 +21,7 @@ A simple web application that fetches and displays random quotes. Users can copy
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rejisterjack/quote.git
    cd quote
    ```
 
