@@ -21,15 +21,14 @@ async function fetchQuote() {
       quoteElement.textContent = `"${quote}"`
       authorElement.textContent = `- ${author}`
       updateTweetLink(quote, author)
+      copyQuoteButton.disabled = false
+      exportQuoteButton.disabled = false
+      tweetQuoteButton.classList.remove("disabled")
+      exportQuoteButton.classList.remove("disabled")
+      copyQuoteButton.classList.remove("disabled")
     } else {
       quoteElement.textContent = "Failed to fetch quote"
       authorElement.textContent = "Please try again later"
-      copyQuoteButton.disabled = true
-      exportQuoteButton.disabled = true
-      tweetQuoteButton.disabled = true
-      tweetQuoteButton.classList.add("disabled")
-      exportQuoteButton.classList.add("disabled")
-      copyQuoteButton.classList.add("disabled")
       return
     }
   } catch (error) {
@@ -41,5 +40,12 @@ function updateTweetLink(quote, author) {
   const tweetText = encodeURIComponent(`"${quote}" - ${author}`)
   tweetQuoteButton.href = `https://twitter.com/intent/tweet?text=${tweetText}`
 }
+
+copyQuoteButton.addEventListener("click", () => {
+  const quoteText = quoteElement.textContent + " " + authorElement.textContent
+  navigator.clipboard.writeText(quoteText).then(() => {
+    alert("Quote copied to clipboard")
+  })
+})
 
 newQuoteButton.addEventListener("click", fetchQuote)
