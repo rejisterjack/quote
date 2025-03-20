@@ -14,13 +14,16 @@ async function fetchQuote() {
   try {
     const response = await fetch(API_URL)
     const data = await response.json()
-    
-    if(!data.success){
 
+    if (data.success) {
+      const quote = data.data.content
+      const author = data.data.author
+      quoteElement.textContent = `"${quote}"`
+      authorElement.textContent = `- ${author}`
     } else {
-        quoteElement.textContent = "Failed to fetch quote"
-        authorElement.textContent = "Please try again later"
-        return
+      quoteElement.textContent = "Failed to fetch quote"
+      authorElement.textContent = "Please try again later"
+      return
     }
   } catch (error) {
     console.error("Failed to fetch quote", error)
